@@ -13,6 +13,8 @@ API Course, Lesson 1 -->
    <script type="text/javascript">
      // Create a map variable
      var map;
+     //Blank array for listing markers
+     var markers = [];
      // Function to initialize the map within the map div
      function initMap() {
        map = new google.maps.Map(document.getElementById('map'), {
@@ -20,21 +22,35 @@ API Course, Lesson 1 -->
          zoom: 14
        });
        // Create a single latLng literal object.
-       var singleLatLng = {lat: 40.74135, lng: -73.99802};
+       var singleLatLng = {lat: 47.734145, lng: -122.224433};
        // TODO: Create a single marker appearing on initialize -
        // Create it with the position of the singleLatLng,
        // on the map, and give it your own title!
-
+      
+       //List of multiple locations
+       var locations = [
+         {title: '', location: {lat: , lng: }},
+         {title: '', location: {lat: , lng: }},
+         {title: '', location: {lat: , lng: }},
+         {title: '', location: {lat: , lng: }},
+         {title: '', location: {lat: , lng: }},
+         {title: '', location: {lat: , lng: }},
+       ]
        // TODO: create a single infowindow, with your own content.
        // It must appear on the marker
-
+      var infowindow = new google.maps.InfoWindow({
+        content: 'Information!!'
+      });
+      marker.addListner('click', function() {
+        infowindow.open(map, marker);
+      });
        // TODO: create an EVENT LISTENER so that the infowindow opens when
        // the marker is clicked!
      }
    </script>
    <!--TODO: Insert your API Key in the below call to load the API.-->
    <script async defer
-     src="https://maps.googleapis.com/maps/api/js?v=3&key=XXX&callback=initMap">
+     src="https://maps.googleapis.com/maps/api/js?v=3&key=********&callback=initMap">
    </script>
  </body>
 </html>
